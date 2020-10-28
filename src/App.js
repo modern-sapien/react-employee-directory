@@ -1,18 +1,22 @@
 import Header from "./Components/Navigation"
 import Employees from "./Components/Employees/Employees"
 import React, { Component } from 'react';
+import axios from "axios"
 
 class App extends Component {
   state = {
     employees: [
-      {name: "jim",
-      image: "https://www.placecage.com/100/100",
-      username: "jimbo",
-      email: "jim@jimmail.com",
-      github: "http://wwww.github.com/users/jimbo",
-      id: 2}],
+],
     loading: false
   }
+
+async componentDidMount() {
+  const res = await axios.get("https://randomuser.me/api/?page=3&results=20")
+  console.log(res.data.results)
+  this.setState({employees: res.data.results})
+  console.log("-----------------")
+}
+
   render() {
     return (
       <div>
