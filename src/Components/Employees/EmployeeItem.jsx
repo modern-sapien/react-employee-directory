@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EmployeeItem = ({employee: {name, email, picture, phone}}) => {
+const EmployeeItem = ({employee: {name, email, picture, phone, dob}}) => {
     return (
         <div className="row my-3 py-2 border border-secondary">
             <div className="col-2 d-flex align-content-center">
@@ -14,8 +14,9 @@ const EmployeeItem = ({employee: {name, email, picture, phone}}) => {
             </div>
 
             <div className="col-3"><h4>{name.first} {name.last}</h4></div>
-            <div className="col-3"><h4>{phone}</h4></div>
+            <div className="col-2"><h4>{phone}</h4></div>
             <div className="col-3"><h4><a href={email}>{email}</a></h4></div>
+            <div className="col-2"><h4>{dob.age}</h4></div>
         </div>
     );
 };

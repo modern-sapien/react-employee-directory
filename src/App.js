@@ -11,6 +11,13 @@ class App extends Component {
   }
 
 async componentDidMount() {
+  const res = await axios.get("https://randomuser.me/api/?results=20")
+  console.log(res.data.results)
+  this.setState({employees: res.data.results})
+  console.log("-----------------")
+}
+
+async componentDidMount() {
   const res = await axios.get("https://randomuser.me/api/?page=3&results=20")
   console.log(res.data.results)
   this.setState({employees: res.data.results})
