@@ -1,16 +1,17 @@
 import Header from "./Components/Navigation"
+import Employees from "./Components/Employees/Employees"
 import React, { Component } from 'react';
 
 class App extends Component {
   state = {
-    users: [],
+    employees: [],
     loading: false
   }
   render() {
     return (
       <>
       <Header />
-      <h1>This is the main app component</h1>
+      <Employees employees={this.state.employees}/>
       </>
     );
   }
