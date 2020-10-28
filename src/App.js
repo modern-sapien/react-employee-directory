@@ -6,7 +6,7 @@ class App extends Component {
   state = {
     employees: [
       {name: "jim",
-      image: "here is a link",
+      image: "https://www.placecage.com/100/100",
       username: "jimbo",
       email: "jim@jimmail.com",
       github: "http://wwww.github.com/users/jimbo",
