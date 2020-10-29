@@ -23,7 +23,6 @@ class App extends Component {
   handleSearch = (event) => {
     const filteredEmployee = event.target.value;
     const filteredEmployees = this.state.filteredEmployees.filter((employee) => {
-      // console.log
       return employee.email.indexOf(filteredEmployee) !== -1;
     });
     // setState REQUIRES a key and a value, so it is important to differentiate between them.
@@ -33,8 +32,10 @@ class App extends Component {
   // if alphabetical is false, then SORT through the employees with a to b descending
   // if alphabetical is true, then SORT through the employees with a to b ascending
   
+  // Sorting by email forwards & in reverse
   handleEmailSort = (event) => {
     console.log("clicked within app.js")
+    if (this.state.alphabetical == false) {
     const sortAbc = !this.state.alphabetical ? 
     this.state.filteredEmployees.sort(function (a, b) {
       return a.email > b.email ? 1 : -1
@@ -42,7 +43,15 @@ class App extends Component {
     this.state.filteredEmployees
     this.setState({filteredEmployees: sortAbc, alphabetical: !this.state.alphabetical})
     console.log(this.state.filteredEmployees)
-  }
+  } else {
+     console.log("You lose")
+     const sortZxy = this.state.alphabetical ?
+     this.state.filteredEmployees.sort(function(a, b) {
+       return a.email < b.email ? 1 : -1
+     }): this.state.filteredEmployees
+          this.setState({filteredEmployees: sortZxy, alphabetical: !this.state.alphabetical})
+    }
+  } 
 
 
   render() {
