@@ -14,10 +14,12 @@ const Employees = ({employees}) => {
 
         </div>
             {employees.map(employee => (
-                <EmployeeItem key={employee} employee={employee} />
+                <EmployeeItem key={employee.login.uuid} employee={employee} />
             ))}
         </>
     );
 };
 
 export default Employees;
+
+
