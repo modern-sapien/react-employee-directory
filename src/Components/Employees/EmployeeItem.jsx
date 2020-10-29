@@ -14,8 +14,8 @@ const EmployeeItem = ({employee: {name, email, picture, phone, dob}}) => {
             </div>
 
             <div className="col-3"><h4>{name.first} {name.last}</h4></div>
-            <div className="col-2"><h4>{phone}</h4></div>
-            <div className="col-3"><h4><a href={email}>{email}</a></h4></div>
+            <div className="col-2"><h5>{phone}</h5></div>
+            <div className="col-3"><h5><a href={email}>{email}</a></h5></div>
             <div className="col-2"><h4>{dob.age}</h4></div>
         </div>
     );
