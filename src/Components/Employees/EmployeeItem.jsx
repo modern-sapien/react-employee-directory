@@ -9,14 +9,13 @@ const EmployeeItem = ({employee: {name, email, picture, phone, dob}}) => {
                     <div className="col-6">            
                     <img className="rounded " src={picture.thumbnail} alt="" style={{ width: "50px" }}/>
                     </div>
-                    <div className="col-3"></div>
                 </div>
             </div>
 
-            <div className="col-3"><h4>{name.first} {name.last}</h4></div>
+            <div className="col-2"><h5>{name.first} {name.last}</h5></div>
             <div className="col-2"><h5>{phone}</h5></div>
-            <div className="col-3"><h5><a href={email}>{email}</a></h5></div>
-            <div className="col-2"><h4>{dob.age}</h4></div>
+            <div className="col-4"><h5><a href={email}>{email}</a></h5></div>
+            <div className="col-1"><h4>{dob.age}</h4></div>
         </div>
     );
 };

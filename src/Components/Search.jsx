@@ -7,11 +7,9 @@ class Search extends Component {
     return (
       <div className="container">
         <div className="row"></div>
-        <div className="col-sm-2"></div>
-        <div className="col-sm-8">
+        <div className="col-12 container-fluid">
           <input onChange={(event) => this.props.handleSearch(event)} />
         </div>
-        <div className="col-sm-2"></div>
       </div>
     );
   }
