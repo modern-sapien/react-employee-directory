@@ -12,6 +12,7 @@ class App extends Component {
     loading: false,
   };
 
+  
   async componentDidMount() {
     const res = await axios.get("https://randomuser.me/api/?results=20");
     this.setState({
@@ -20,18 +21,25 @@ class App extends Component {
     });
   }
 
+  setOriginalEmployees() {
+    console.log(this.state.employees)
+    this.setState({filteredEmployees: this.state.employees})
+  }
+
   handleSearch = (event) => {
     const filteredEmployee = event.target.value;
+    if (filteredEmployee == 0) {
+     this.setOriginalEmployees();
+    } else {
+
     const filteredEmployees = this.state.filteredEmployees.filter((employee) => {
       return employee.email.indexOf(filteredEmployee) !== -1;
     });
     // setState REQUIRES a key and a value, so it is important to differentiate between them.
     this.setState({filteredEmployees: filteredEmployees});
   };
+}
 
-  // if alphabetical is false, then SORT through the employees with a to b descending
-  // if alphabetical is true, then SORT through the employees with a to b ascending
-  
   // Sorting by email forwards & in reverse
   handleEmailSort = (event) => {
     console.log("clicked within app.js")
